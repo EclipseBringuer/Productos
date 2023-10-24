@@ -8,4 +8,16 @@ public class Usuario {
     private String nombre;
     private String email;
     private String pass;
+
+    public Usuario(String nombre, String email, String pass) {
+        this.nombre = nombre;
+        this.email = email;
+        this.pass = pass;
+    }
+
+    public Usuario() {
+        this.nombre = "";
+        this.email = "";
+        this.pass = "";
+    }
 }
