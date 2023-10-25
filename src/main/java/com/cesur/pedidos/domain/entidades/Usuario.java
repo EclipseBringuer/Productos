@@ -2,6 +2,17 @@ package com.cesur.pedidos.domain.entidades;
 
 public class Usuario {
     private int id;
+
+    @Override
+    public String toString() {
+        return "Usuario{" +
+                "id=" + id +
+                ", nombre='" + nombre + '\'' +
+                ", email='" + email + '\'' +
+                ", pass='" + pass + '\'' +
+                '}';
+    }
+
     private String nombre;
     private String email;
     private String pass;
