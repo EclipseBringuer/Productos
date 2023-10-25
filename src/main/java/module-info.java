@@ -2,7 +2,6 @@ module com.cesur.pedidos {
     requires javafx.controls;
     requires javafx.fxml;
     requires java.sql;
-    requires lombok;
 
     opens com.cesur.pedidos to javafx.fxml;
     opens properties;
