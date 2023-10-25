@@ -1,0 +1,21 @@
+.campos {
+    -fx-border-radius: 15px;
+    -fx-background-radius: 30px;
+    -fx-background-color: #9dbcbc;
+
+}
+
+.carta {
+    -fx-background-color: white;
+    -fx-background-radius: 10px;
+    -fx-effect: dropshadow(gaussian, black, 10, 0, 2, 2);
+}
+
+.fondo {
+    -fx-background-color: #5c627a;
+}
+
+.texto {
+    -fx-font-family: "Amiri Quran";
+    -fx-padding: 10px;
+}
