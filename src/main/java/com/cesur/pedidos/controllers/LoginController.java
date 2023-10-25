@@ -1,5 +1,7 @@
 package com.cesur.pedidos.controllers;
 
+import com.cesur.pedidos.Session;
+import com.cesur.pedidos.VentaApplication;
 import com.cesur.pedidos.domain.DBConnection;
 import com.cesur.pedidos.domain.daos.UsuarioDAOImp;
 import com.cesur.pedidos.domain.entidades.Usuario;
@@ -27,14 +29,17 @@ public class LoginController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
-
     }
-
 
     @FXML
     public void logear(ActionEvent actionEvent) {
         var userDAO = new UsuarioDAOImp(DBConnection.getConnection());
-        Usuario user = userDAO.load(txtCorreo.getText(),txtPass.getText());
-        info.setText(user.toString());
+        Usuario user = userDAO.load(txtCorreo.getText(), txtPass.getText());
+        if (user == null) {
+            info.setText("Error, la contraseña o el usuario son incorrectos");
+        } else {
+            Session.setUser(user);
+            VentaApplication.loadFXML("");
+        }
     }
 }
