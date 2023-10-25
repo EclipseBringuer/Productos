@@ -34,12 +34,12 @@ public class LoginController implements Initializable {
     @FXML
     public void logear(ActionEvent actionEvent) {
         var userDAO = new UsuarioDAOImp(DBConnection.getConnection());
-        Usuario user = userDAO.load(txtCorreo.getText(), txtPass.getText());
+        Usuario user = userDAO.loadByAccount(txtCorreo.getText(), txtPass.getText());
         if (user == null) {
             info.setText("Error, la contraseña o el usuario son incorrectos");
         } else {
             Session.setUser(user);
-            VentaApplication.loadFXML("");
+            VentaApplication.loadFXML("fxml/main-view.fxml");
         }
     }
 }

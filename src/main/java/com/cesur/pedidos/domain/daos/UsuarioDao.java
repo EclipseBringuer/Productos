@@ -3,7 +3,7 @@ package com.cesur.pedidos.domain.daos;
 import com.cesur.pedidos.domain.entidades.Usuario;
 
 public interface UsuarioDao {
-    public Usuario load(String email, String pass);
+    public Usuario loadByAccount(String email, String pass);
 
     public Usuario save(Usuario usuario);
 

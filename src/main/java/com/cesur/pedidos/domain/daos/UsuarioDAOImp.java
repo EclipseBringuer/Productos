@@ -18,7 +18,7 @@ public class UsuarioDAOImp implements UsuarioDao {
     }
 
     @Override
-    public Usuario load(String email, String pass) {
+    public Usuario loadByAccount(String email, String pass) {
         Usuario salida = null;
         try (var pst = connection.prepareStatement(QUERY_LOAD)) {
             pst.setString(1, email);
