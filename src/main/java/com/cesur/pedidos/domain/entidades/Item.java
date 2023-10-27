@@ -1,6 +1,8 @@
 package com.cesur.pedidos.domain.entidades;
 
-public class Item {
+import java.io.Serializable;
+
+public class Item implements Serializable {
     private int id;
     private Producto producto;
     private int cantidad;

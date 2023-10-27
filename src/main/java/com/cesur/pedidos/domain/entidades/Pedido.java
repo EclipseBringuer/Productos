@@ -1,8 +1,9 @@
 package com.cesur.pedidos.domain.entidades;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class Pedido {
+public class Pedido implements Serializable {
     private int id;
     private String codigo;
     private String fecha;
