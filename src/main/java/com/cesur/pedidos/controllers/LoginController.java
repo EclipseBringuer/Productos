@@ -13,7 +13,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -32,7 +31,8 @@ public class LoginController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
+        txtCorreo.setText("gabrielrl2004@gmail.com");
+        txtPass.setText("15112004");
     }
 
     @FXML
@@ -51,4 +51,5 @@ public class LoginController implements Initializable {
     public void cargarRegistro(Event event) {
         VentaApplication.loadFXML("fxml/regist-view.fxml", 500, 600, false, false);
     }
+
 }
