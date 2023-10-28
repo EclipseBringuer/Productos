@@ -14,7 +14,8 @@ public class VentaApplication extends Application {
     public void start(Stage stage) throws IOException {
         myStage = stage;
         FXMLLoader fxmlLoader = new FXMLLoader(VentaApplication.class.getResource("fxml/login-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 320, 240);
+        Scene scene = new Scene(fxmlLoader.load(),500,600);
+        stage.setResizable(false);
         stage.setTitle("Hello!");
         stage.setScene(scene);
         stage.show();
@@ -24,7 +25,7 @@ public class VentaApplication extends Application {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(VentaApplication.class.getResource(fxml));
             Scene scene = null;
-            scene = new Scene(fxmlLoader.load());
+            scene = new Scene(fxmlLoader.load(),500,600);
             myStage.setScene(scene);
         } catch (IOException e) {
             System.out.println("Error al cargar el FXML");

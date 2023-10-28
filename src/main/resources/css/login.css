@@ -1,18 +1,49 @@
 .campos {
-    -fx-border-radius: 15px;
-    -fx-background-radius: 30px;
-    -fx-background-color: #9dbcbc;
-
+    -fx-background-radius: 22px;
+    -fx-background-color: lightgrey;
+    -fx-font-weight: bold;
+    -fx-text-fill:linear-gradient(to right bottom, #5ecde0, #ce25c1);
 }
 
 .carta {
     -fx-background-color: white;
     -fx-background-radius: 10px;
-    -fx-effect: dropshadow(gaussian, black, 10, 0, 2, 2);
+    -fx-effect: dropshadow(gaussian, #2b2628, 35, 0, 7, 7);
+}
+
+.btnLogin{
+    -fx-background-radius: 22px;
+    -fx-background-color: linear-gradient(to right bottom, #5ecde0, #ce25c1);
+    -fx-text-fill: white;
+}
+
+.btnLogin:hover{
+    -fx-text-fill:linear-gradient(to right bottom, #5ecde0, #ce25c1);
+    -fx-background-color: #e9e9e9;
+    -fx-font-weight: bold;
+}
+.btnVolver{
+    -fx-background-color: #e9e9e9;
+    -fx-font-weight: bold;
+    -fx-text-fill:linear-gradient(to right bottom, #5ecde0, #ce25c1);
+    -fx-background-radius: 22px;
+}
+.btnVolver:hover{
+    -fx-text-fill: #e9e9e9;
+    -fx-background-color:linear-gradient(to right bottom, #ce25c1, #5ecde0);
 }
 
 .fondo {
-    -fx-background-color: #5c627a;
+    -fx-background-color: linear-gradient(to right bottom, #5ecde0, #ce25c1);
+}
+
+.enlace {
+    -fx-text-fill: #ce25c1;
+}
+
+.enlace:hover {
+    -fx-text-fill: #5ecde0;
+    -fx-underline: true;
 }
 
 .texto {

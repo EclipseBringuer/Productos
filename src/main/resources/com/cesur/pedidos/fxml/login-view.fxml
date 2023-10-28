@@ -3,33 +3,44 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
-
+<?import javafx.scene.text.Font?>
 
 <BorderPane styleClass="fondo" stylesheets="@../../../../css/login.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cesur.pedidos.controllers.LoginController">
    <center>
-      <VBox alignment="CENTER" prefHeight="341.0" prefWidth="244.0" spacing="5.0" styleClass="carta">
-          <padding>
-              <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-          </padding>
-         <Label fx:id="info" styleClass="texto" text="Login" />
-         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+      <VBox alignment="CENTER" maxHeight="450.0" maxWidth="325.0" spacing="30.0" styleClass="carta">
+         <Label fx:id="info" text="Iniciar Sesión">
+            <font>
+               <Font name="System Bold" size="20.0" />
+            </font>
+         </Label>
+         <TextField fx:id="txtCorreo" maxWidth="200.0" promptText="Correo" styleClass="campos">
+            <padding>
+               <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+            </padding>
+         </TextField>
+         <PasswordField fx:id="txtPass" maxWidth="200.0" promptText="Contraseña" styleClass="campos">
+            <padding>
+               <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+            </padding>
+         </PasswordField>
+          <Button fx:id="btnLogin" maxWidth="70.0" onAction="#logear" styleClass="btnLogin" text="Login">
+            <padding>
+               <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+            </padding>
+            <font>
+               <Font name="System Bold" size="12.0" />
+            </font></Button>
+         <HBox alignment="CENTER" spacing="5.0">
             <children>
-            
-                            <Label styleClass="texto" text="Correo" />
-               <TextField fx:id="txtCorreo" prefWidth="120.0" styleClass="campos" />
+               <Label text="¿No tienes cuenta? " />
+               <Label fx:id="txtRegistrate" onMouseClicked="#cargarRegistro" styleClass="enlace" text="Pincha Aquí" />
             </children>
          </HBox>
-         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
-            <children>
-               <Label styleClass="texto" text="Contraseña" />
-               <TextField fx:id="txtPass" styleClass="campos" />
-            </children>
-         </HBox>
-          <Button fx:id="btnLogin" onAction="#logear" text="Login" />
          <BorderPane.margin>
             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
          </BorderPane.margin>

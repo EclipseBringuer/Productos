@@ -6,7 +6,7 @@
 <?import javafx.scene.text.Font?>
 
 
-<BorderPane prefHeight="289.0" prefWidth="390.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cesur.pedidos.controllers.MainView">
+<BorderPane prefHeight="289.0" prefWidth="390.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cesur.pedidos.controllers.MainController">
    <center>
       <FlowPane alignment="CENTER" BorderPane.alignment="CENTER">
          <children>

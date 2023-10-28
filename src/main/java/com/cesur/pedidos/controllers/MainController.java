@@ -6,7 +6,7 @@ import javafx.scene.control.Label;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class MainView implements Initializable {
+public class MainController implements Initializable {
     @javafx.fxml.FXML
     private Label texto;
 
