@@ -34,7 +34,6 @@ public class RegisterController implements Initializable {
 
     }
 
-
     @javafx.fxml.FXML
     public void registrarUsuario(ActionEvent actionEvent) {
         if (!Objects.equals(txtNombre.getText(), "") && !Objects.equals(txtCorreo.getText(), "") && !Objects.equals(txtPass.getText(), "")) {
