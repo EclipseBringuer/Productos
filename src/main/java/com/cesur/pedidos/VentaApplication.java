@@ -14,19 +14,21 @@ public class VentaApplication extends Application {
     public void start(Stage stage) throws IOException {
         myStage = stage;
         FXMLLoader fxmlLoader = new FXMLLoader(VentaApplication.class.getResource("fxml/login-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(),500,600);
+        Scene scene = new Scene(fxmlLoader.load(), 500, 600);
         stage.setResizable(false);
-        stage.setTitle("Hello!");
+        stage.setTitle("CholloGaming");
         stage.setScene(scene);
         stage.show();
     }
 
-    public static void loadFXML(String fxml) {
+    public static void loadFXML(String fxml, int width, int height, boolean resizable, boolean fullScreen) {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(VentaApplication.class.getResource(fxml));
             Scene scene = null;
-            scene = new Scene(fxmlLoader.load(),500,600);
+            scene = new Scene(fxmlLoader.load(), width, height);
             myStage.setScene(scene);
+            myStage.setResizable(resizable);
+            myStage.setFullScreen(fullScreen);
         } catch (IOException e) {
             System.out.println("Error al cargar el FXML");
             throw new RuntimeException(e);

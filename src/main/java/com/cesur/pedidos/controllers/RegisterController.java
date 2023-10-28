@@ -46,11 +46,11 @@ public class RegisterController implements Initializable {
             try {
                 Usuario salida = userDAO.save(user);
                 if (salida != null) {
-                    VentaApplication.loadFXML("fxml/login-view.fxml");
+                    VentaApplication.loadFXML("fxml/login-view.fxml", 500, 600, false, false);
                 } else {
                     info.setText("Error, fallo al registrate");
                 }
-            }catch (RuntimeException e){
+            } catch (RuntimeException e) {
                 info.setText("Usuario ya existente");
             }
         } else {
@@ -60,6 +60,6 @@ public class RegisterController implements Initializable {
 
     @javafx.fxml.FXML
     public void volver(ActionEvent actionEvent) {
-        VentaApplication.loadFXML("fxml/login-view.fxml");
+        VentaApplication.loadFXML("fxml/login-view.fxml", 500, 600, false, false);
     }
 }

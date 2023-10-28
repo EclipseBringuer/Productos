@@ -5,7 +5,6 @@ import com.cesur.pedidos.VentaApplication;
 import com.cesur.pedidos.domain.DBConnection;
 import com.cesur.pedidos.domain.daos.UsuarioDAOImp;
 import com.cesur.pedidos.domain.entidades.Usuario;
-import javafx.animation.FadeTransition;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.FXML;
@@ -14,7 +13,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import javafx.util.Duration;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -42,15 +40,15 @@ public class LoginController implements Initializable {
         var userDAO = new UsuarioDAOImp(DBConnection.getConnection());
         Usuario user = userDAO.loadByAccount(txtCorreo.getText(), txtPass.getText());
         if (user == null) {
-            info.setText("Error, la contraseña o el usuario son incorrectos");
+            info.setText("Usuario o contraseña incorrecto");
         } else {
             Session.setUser(user);
-            VentaApplication.loadFXML("fxml/main-view.fxml");
+            VentaApplication.loadFXML("fxml/main-view.fxml", 800, 600, true, true);
         }
     }
 
     @FXML
     public void cargarRegistro(Event event) {
-        VentaApplication.loadFXML("fxml/regist-view.fxml");
+        VentaApplication.loadFXML("fxml/regist-view.fxml", 500, 600, false, false);
     }
 }
