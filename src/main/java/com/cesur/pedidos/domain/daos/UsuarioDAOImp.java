@@ -5,9 +5,7 @@ import com.cesur.pedidos.domain.entidades.Usuario;
 import java.sql.*;
 
 public class UsuarioDAOImp implements UsuarioDao {
-
     private Connection connection;
-
     private static final String QUERY_SAVE = "INSERT INTO usuario(nombre,email,contraseña) VALUES (?,?,?)";
     private static final String QUERY_LOAD = "SELECT * FROM usuario WHERE email=? AND contraseña=?";
     private static final String QUERY_REMOVE = "DELETE FROM usuario WHERE id=?";

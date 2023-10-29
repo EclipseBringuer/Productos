@@ -4,7 +4,6 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-
 import java.io.IOException;
 
 public class VentaApplication extends Application {
@@ -21,14 +20,14 @@ public class VentaApplication extends Application {
         stage.show();
     }
 
-    public static void loadFXML(String fxml, int width, int height, boolean resizable, boolean fullScreen) {
+    public static void loadFXML(String fxml, int width, int height, boolean resizable, boolean maximized) {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(VentaApplication.class.getResource(fxml));
-            Scene scene = null;
+            Scene scene;
             scene = new Scene(fxmlLoader.load(), width, height);
             myStage.setScene(scene);
             myStage.setResizable(resizable);
-            myStage.setFullScreen(fullScreen);
+            myStage.setMaximized(maximized);
         } catch (IOException e) {
             System.out.println("Error al cargar el FXML");
             throw new RuntimeException(e);

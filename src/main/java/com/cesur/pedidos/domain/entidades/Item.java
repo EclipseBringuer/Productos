@@ -51,4 +51,14 @@ public class Item implements Serializable {
     public void setCodigoPedido(String codigoPedido) {
         this.codigoPedido = codigoPedido;
     }
+
+    @Override
+    public String toString(){
+        return "Item{" +
+                "id=" + id +
+                ", producto='" + producto.getNombre() + '\'' +
+                ", cantidad='" + cantidad + '\'' +
+                ", codigo pedido='" + codigoPedido + '\'' +
+                '}';
+    }
 }
