@@ -28,7 +28,6 @@ public class LoginController implements Initializable {
     @FXML
     private PasswordField txtPass;
 
-
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         txtCorreo.setText("gabrielrl2004@gmail.com");
@@ -43,13 +42,12 @@ public class LoginController implements Initializable {
             info.setText("Usuario o contraseña incorrecto");
         } else {
             Session.setUser(user);
-            VentaApplication.loadFXML("fxml/main-view.fxml", 800, 600, true, true);
+            VentaApplication.cambiarSecene("main-view.fxml");
         }
     }
 
     @FXML
     public void cargarRegistro(Event event) {
-        VentaApplication.loadFXML("fxml/regist-view.fxml", 500, 600, false, false);
+        VentaApplication.cambiarSecene("regist-view.fxml");
     }
-
 }

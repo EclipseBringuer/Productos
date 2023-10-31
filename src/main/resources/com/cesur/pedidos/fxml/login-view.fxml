@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane prefHeight="459.0" prefWidth="351.0" styleClass="fondo" stylesheets="@../../../../css/login.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cesur.pedidos.controllers.LoginController">
+<BorderPane styleClass="fondo" stylesheets="@../../../../css/login.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cesur.pedidos.controllers.LoginController">
    <center>
       <VBox alignment="CENTER" maxHeight="450.0" maxWidth="325.0" spacing="30.0" styleClass="carta">
          <Label fx:id="info" contentDisplay="CENTER" text="Iniciar Sesión" textAlignment="CENTER">

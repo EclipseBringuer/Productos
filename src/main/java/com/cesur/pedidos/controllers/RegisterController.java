@@ -35,29 +35,33 @@ public class RegisterController implements Initializable {
 
     @javafx.fxml.FXML
     public void registrarUsuario(ActionEvent actionEvent) {
-        if (!Objects.equals(txtNombre.getText(), "") && !Objects.equals(txtCorreo.getText(), "") && !Objects.equals(txtPass.getText(), "")) {
-            Usuario user = new Usuario();
-            user.setNombre(txtNombre.getText());
-            user.setEmail(txtCorreo.getText());
-            user.setPass(txtPass.getText());
-            var userDAO = new UsuarioDAOImp(DBConnection.getConnection());
-            try {
-                Usuario salida = userDAO.save(user);
-                if (salida != null) {
-                    VentaApplication.loadFXML("fxml/login-view.fxml", 500, 600, false, false);
-                } else {
-                    info.setText("Error, fallo al registrate");
+        if (txtCorreo.getText().contains("@gmail.com")) {
+            if (!Objects.equals(txtNombre.getText(), "") && !Objects.equals(txtCorreo.getText(), "") && !Objects.equals(txtPass.getText(), "")) {
+                Usuario user = new Usuario();
+                user.setNombre(txtNombre.getText());
+                user.setEmail(txtCorreo.getText());
+                user.setPass(txtPass.getText());
+                var userDAO = new UsuarioDAOImp(DBConnection.getConnection());
+                try {
+                    Usuario salida = userDAO.save(user);
+                    if (salida != null) {
+                        VentaApplication.cambiarSecene("login-view.fxml");
+                    } else {
+                        info.setText("Error, fallo al registrate");
+                    }
+                } catch (RuntimeException e) {
+                    info.setText("Usuario ya existente");
                 }
-            } catch (RuntimeException e) {
-                info.setText("Usuario ya existente");
+            } else {
+                info.setText("Rellena todos los campos");
             }
         } else {
-            info.setText("Rellena todos los campos");
+            info.setText("Correo invalido");
         }
     }
 
     @javafx.fxml.FXML
     public void volver(ActionEvent actionEvent) {
-        VentaApplication.loadFXML("fxml/login-view.fxml", 500, 600, false, false);
+        VentaApplication.cambiarSecene("login-view.fxml");
     }
 }
