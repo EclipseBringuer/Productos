@@ -13,6 +13,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
+
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -71,7 +72,7 @@ public class MainController implements Initializable {
                 (observable, vOld, vNew) -> {
                     Session.setPedidoActual(table.getSelectionModel().getSelectedItem());
                     items.clear();
-                    infoPedido.setText("Información del pedido: "+Session.getPedidoActual().getCodigo());
+                    infoPedido.setText("Información del pedido: " + Session.getPedidoActual().getCodigo());
                     items.addAll(Session.getPedidoActual().getItems());
                 }
         );
@@ -96,8 +97,17 @@ public class MainController implements Initializable {
 
     @javafx.fxml.FXML
     public void logout(Event event) {
-        Session.setUser(null);
-        Session.setPedidoActual(null);
-        VentaApplication.cambiarSecene("login-view.fxml");
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Confirmación");
+        alert.setHeaderText("¿Estas seguro de que quieres salir?");
+        alert.setContentText("Presiona aceptar para cerrar sesión");
+        alert.getButtonTypes().setAll(ButtonType.OK, ButtonType.CANCEL);
+        alert.showAndWait().ifPresent((response) -> {
+            if (response == ButtonType.OK) {
+                Session.setUser(null);
+                Session.setPedidoActual(null);
+                VentaApplication.cambiarSecene("login-view.fxml");
+            }
+        });
     }
 }
