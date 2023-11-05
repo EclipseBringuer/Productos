@@ -1,7 +1,6 @@
 package com.cesur.pedidos.domain;
 
 import com.cesur.pedidos.VentaApplication;
-
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
