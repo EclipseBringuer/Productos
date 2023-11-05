@@ -1,9 +1,11 @@
 package com.cesur.pedidos.domain.daos;
 
 import com.cesur.pedidos.domain.entidades.Usuario;
-
 import java.sql.*;
 
+/**
+ * Implementación de la interfaz UsuarioDao para acceder a la información de los usuarios en la base de datos.
+ */
 public class UsuarioDAOImp implements UsuarioDao {
     private Connection connection;
     private static final String QUERY_SAVE = "INSERT INTO usuario(nombre,email,contraseña) VALUES (?,?,?)";
@@ -11,10 +13,22 @@ public class UsuarioDAOImp implements UsuarioDao {
     private static final String QUERY_REMOVE = "DELETE FROM usuario WHERE id=?";
     private static final String QUERY_UPDATE = "";
 
+    /**
+     * Constructor de la implementación de UsuarioDao.
+     *
+     * @param c La conexión a la base de datos.
+     */
     public UsuarioDAOImp(Connection c) {
         this.connection = c;
     }
 
+    /**
+     * Carga un usuario por su correo electrónico y contraseña desde la base de datos.
+     *
+     * @param email El correo electrónico del usuario.
+     * @param pass La contraseña del usuario.
+     * @return El usuario cargado, o null si no se encontró ningún usuario con las credenciales especificadas.
+     */
     @Override
     public Usuario loadByAccount(String email, String pass) {
         Usuario salida = null;
@@ -37,6 +51,12 @@ public class UsuarioDAOImp implements UsuarioDao {
         return salida;
     }
 
+    /**
+     * Guarda un nuevo usuario en la base de datos.
+     *
+     * @param usuario El usuario a guardar.
+     * @return El usuario guardado, o null si hubo un error durante el proceso de guardado.
+     */
     @Override
     public Usuario save(Usuario usuario) {
         Usuario salida = null;
@@ -62,11 +82,22 @@ public class UsuarioDAOImp implements UsuarioDao {
         return salida;
     }
 
+    /**
+     * Actualiza la información de un usuario en la base de datos.
+     *
+     * @param usuario El usuario a actualizar.
+     * @return El usuario actualizado, o null si hubo un error durante el proceso de actualización.
+     */
     @Override
     public Usuario update(Usuario usuario) {
         return null;
     }
 
+    /**
+     * Elimina un usuario de la base de datos.
+     *
+     * @param usuario El usuario a eliminar.
+     */
     @Override
     public void remove(Usuario usuario) {
         try (var pst = connection.prepareStatement(QUERY_REMOVE)) {

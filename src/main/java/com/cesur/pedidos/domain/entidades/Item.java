@@ -2,17 +2,29 @@ package com.cesur.pedidos.domain.entidades;
 
 import java.io.Serializable;
 
+/**
+ * Clase que representa un ítem en la aplicación.
+ */
 public class Item implements Serializable {
-    private int id;
-    private Producto producto;
-    private int cantidad;
-    private String codigoPedido;
+    private int id; // Identificador único del ítem.
+    private Producto producto; // Producto asociado al ítem.
+    private int cantidad; // Cantidad de productos en el ítem.
+    private String codigoPedido; // Código del pedido al que pertenece el ítem.
 
-
+    /**
+     * Constructor por defecto de la clase Item.
+     */
     public Item() {
 
     }
 
+    /**
+     * Constructor de la clase que inicializa un ítem con un producto, cantidad, identificador y código de pedido.
+     * @param producto El producto asociado al ítem.
+     * @param cantidad La cantidad de productos en el ítem.
+     * @param id El identificador único del ítem.
+     * @param codigoPedido El código del pedido al que pertenece el ítem.
+     */
     public Item(Producto producto, int cantidad, int id, String codigoPedido) {
         this.producto = producto;
         this.cantidad = cantidad;
@@ -52,6 +64,10 @@ public class Item implements Serializable {
         this.codigoPedido = codigoPedido;
     }
 
+    /**
+     * Devuelve una representación en forma de cadena del objeto Item.
+     * @return Una cadena que muestra los atributos del ítem.
+     */
     @Override
     public String toString(){
         return "Item{" +

@@ -2,17 +2,30 @@ package com.cesur.pedidos.domain.entidades;
 
 import java.io.Serializable;
 
+/**
+ * Clase que representa un producto en la aplicación.
+ */
 public class Producto implements Serializable {
 
-    private int id;
-    private String nombre;
-    private int cantidad;
-    private String precio;
+    private int id; // Identificador único del producto.
+    private String nombre; // Nombre del producto.
+    private int cantidad; // Cantidad disponible del producto.
+    private String precio; // Precio del producto.
 
+    /**
+     * Constructor por defecto de la clase Producto.
+     */
     public Producto() {
 
     }
 
+    /**
+     * Constructor de la clase que inicializa un producto con nombre, cantidad, precio y un identificador.
+     * @param nombre El nombre del producto.
+     * @param cantidad La cantidad disponible del producto.
+     * @param precio El precio del producto.
+     * @param id El identificador único del producto.
+     */
     public Producto(String nombre, int cantidad, String precio, int id) {
         this.nombre = nombre;
         this.cantidad = cantidad;

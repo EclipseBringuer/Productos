@@ -14,25 +14,35 @@ import java.net.URL;
 import java.util.Objects;
 import java.util.ResourceBundle;
 
+/**
+ * Controlador para la vista de registro de usuarios.
+ */
 public class RegisterController implements Initializable {
     @javafx.fxml.FXML
-    private Label info;
+    private Label info; // Etiqueta para mostrar mensajes informativos.
     @javafx.fxml.FXML
-    private TextField txtCorreo;
+    private TextField txtCorreo; // Campo de entrada para el correo electrónico.
     @javafx.fxml.FXML
-    private PasswordField txtPass;
+    private PasswordField txtPass; // Campo de entrada para la contraseña.
     @javafx.fxml.FXML
-    private TextField txtNombre;
+    private TextField txtNombre; // Campo de entrada para el nombre del usuario.
     @javafx.fxml.FXML
-    private Button btnRegist;
+    private Button btnRegist; // Botón para registrar un usuario.
     @javafx.fxml.FXML
-    private Button btnVolver;
+    private Button btnVolver; // Botón para volver a la vista de inicio de sesión.
 
+    /**
+     * Inicializa la vista de registro.
+     */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
     }
 
+    /**
+     * Maneja el evento de registro de usuario.
+     * @param actionEvent El evento de clic en el botón de registro.
+     */
     @javafx.fxml.FXML
     public void registrarUsuario(ActionEvent actionEvent) {
         if (txtCorreo.getText().contains("@gmail.com")) {
@@ -60,6 +70,10 @@ public class RegisterController implements Initializable {
         }
     }
 
+    /**
+     * Maneja el evento de volver a la vista de inicio de sesión.
+     * @param actionEvent El evento de clic en el botón de volver.
+     */
     @javafx.fxml.FXML
     public void volver(ActionEvent actionEvent) {
         VentaApplication.cambiarSecene("login-view.fxml");

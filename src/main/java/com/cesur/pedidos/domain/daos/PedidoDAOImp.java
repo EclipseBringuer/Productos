@@ -7,14 +7,28 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Implementación de la interfaz PedidoDAO para acceder a la información de los pedidos en la base de datos.
+ */
 public class PedidoDAOImp implements PedidoDAO {
     private Connection connection;
     private static final String QUERY_LOAD_BY_USER = "SELECT * FROM pedido WHERE id_usuario=?";
 
+    /**
+     * Constructor de la implementación de PedidoDAO.
+     *
+     * @param c La conexión a la base de datos.
+     */
     public PedidoDAOImp(Connection c) {
         this.connection = c;
     }
 
+    /**
+     * Carga una lista de pedidos asociados a un usuario por su identificador desde la base de datos.
+     *
+     * @param id_usuario El identificador del usuario del cual cargar los pedidos.
+     * @return Una lista de pedidos asociados al usuario.
+     */
     @Override
     public List<Pedido> loadByUser(int id_usuario) {
         List<Pedido> salida = new ArrayList<>();

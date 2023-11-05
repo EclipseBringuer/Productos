@@ -7,6 +7,9 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.Properties;
 
+/**
+ * Clase que gestiona la conexión a la base de datos.
+ */
 public class DBConnection {
     private static final Connection connection;
 
@@ -31,6 +34,10 @@ public class DBConnection {
         }
     }
 
+    /**
+     * Obtiene la conexión a la base de datos.
+     * @return La conexión a la base de datos.
+     */
     public static Connection getConnection() {
         return connection;
     }
